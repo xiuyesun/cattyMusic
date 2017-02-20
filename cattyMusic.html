@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cattyMusic音乐网</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;;
+        }
+        body,html{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            flex-direction:column;
+            background-color: #fff;
+            font-family: Lato, sans-serif;
+            color: #222;
+            font-size: 0.9em;
+        }
+        main{
+            flex:1 0 auto;
+            display: flex;
+        }
+        footer{
+            flex:0 0 90px;
+            background-color: rgba(61, 100, 158, .9);
+            padding:10px;
+            color:#fff;
+            display: flex;
+        }
+        aside{
+            flex:0 0 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            /*background-color: green;*/
+        }
+        aside i.fa {
+            font-size: 0.9em; /*图标的字体大小*/
+        }
+        .content{
+            display: flex;
+            flex:1 0 auto;
+            flex-direction:column;
+        }
+        .music-head{
+            display: flex;
+            flex:0 0 280px;
+            padding: 40px;
+            background-color:  #4e4e4e;
+        }
+        .catty-music{
+            flex:1 0 auto;
+            display: flex;
+            flex-direction: column;
+            font-weight: 300;
+            color: #fff;
+            padding-left: 50px;
+        }
+        .catty-music div:nth-child(1){
+            margin-bottom: auto;
+        }
+        .catty-music div:nth-child(2){
+            margin-top: 0;
+        }
+        .music-list{
+            flex: 1 0 auto;
+            padding: 5px 10px 0px;
+        }
+        li{
+            display: flex;
+            padding: 0 20px;
+            min-height: 50px;
+            line-height: 50px;
+        }
+        li p{
+            flex:0 0 25%;
+        }
+        li span.catty-cloud{
+            border: 1px solid black;
+            font-size: 0.6em;
+            padding: 3px;
+        }
+        li:nth-child(2n){
+            background-color: #f2f2f2;
+        }
+        .catty-music div:nth-child(2) i.fa{
+            font-size: 0.9em;
+            padding: 0 0.7em;
+            font-weight: 300;
+        }
+        .catty-music div:nth-child(1) p:first-child{
+            font-size: 1.8em;
+            margin: 0 0 10px;
+        }
+        .catty-music div:nth-child(1) p:not(:first-child){
+            font-size: 0.9em;
+            margin: 2px 0;
+        }
+        .catty-music-small{
+            display: flex;
+            margin-right: auto;
+        }
+        .catty-music-control{
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .catty-music-small img{
+            width: 100px;
+            padding-right: 20px;
+        }
+        .catty-music-small div{
+            line-height: 30px;
+            padding-top: 15px;
+        }
+        /*.catty-music-control i{*/
+            /*flex:1 0 auto;*/
+        /*}*/
+        /*.catty-music-small div p{*/
+            /*line-height: 30px;*/
+        /*}*/
+        @media screen and (max-width: 64em){
+            .sm-hide{
+                display: none;
+            }
+            .music-head{
+                flex:0 0 auto;
+                display: flex;
+                padding: 40px 0;
+                background-color:  #4e4e4e;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .music-head img{
+                width:150px;
+            }
+            .music-head .catty-music{
+                padding: 0;
+            }
+            .music-head .catty-music div{
+                text-align: center;
+            }
+            .catty-music div:nth-child(1) p:first-child{
+                font-size: 1em;
+                margin: 20px 0;
+            }
+            .catty-music div:nth-child(1) p:not(:first-child){
+                display: none;
+            }
+            .catty-music-small img{
+                display: none;
+            }
+            .catty-music-control{
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <aside class="sm-hide"> <!--这代表侧边栏，其中包含了来自 font-awesome 的图标集-->
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-home"></i>
+            <i class="fa fa-search"></i>
+            <i class="fa fa-volume-up"></i>
+            <i class="fa fa-user"></i>
+            <i class="fa fa-spotify"></i>
+            <i class="fa fa-cog"></i>
+            <i class="fa fa-soundcloud"></i>
+        </aside>
+        <section class="content">
+            <div class="music-head">
+                <!--第一个列表项：包含音乐详情-->
+                <img src="images/catty.jpg" />
+                <!--专辑封面-->
+                <section class="catty-music">
+                    <!--专辑的其它细节-->
+                    <div>
+                        <p>CattyBoard Top 100 Single Charts (11.06.36)</p>
+                        <p>Unknown Artist</p>
+                        <p>2016 . Charts . 100 songs</p>
+                    </div>
+                    <div>
+                        <!--Music controls-->
+                        <i class="fa fa-play">Play all</i>
+                        <i class="fa fa-plus">Add to</i>
+                        <i class="fa fa-ellipsis-h">More</i>
+                    </div>
+                </section>
+            </div>
+            <!--end .music-head-->
+            <!--第二个列表项：包含专辑中的歌曲列表-->
+            <ul class="music-list">
+                <li>
+                    <p>1. One Dance</p>
+                    <p>Crake feat CatKid & Cyla</p>
+                    <p>2:54</p>
+                    <p><span class="catty-cloud">CATTY CLOUD SYNC</span></p>
+                </li>
+                <li>
+                    <p>2. Panda</p>
+                    <p>Cattee</p>
+                    <p>4:06</p>
+                    <p><span class="catty-cloud">CATTY CLOUD SYNC</span></p>
+                </li>
+                <li>
+                    <p>3. Can't Stop the Feeling!</p>
+                    <p>Catin Cimberlake</p>
+                    <p>3:56</p>
+                    <p><span class="catty-cloud">CATTY CLOUD SYNC</span></p>
+                </li>
+                <li>
+                    <p>4. Work From Home</p>
+                    <p>Cat Harmony feat Colla</p>
+                    <p>3:34</p>
+                    <p><span class="catty-cloud">CATTY CLOUD SYNC</span></p>
+                </li>
+            </ul>
+        </section>
+        </section>
+    </main>
+    <footer>
+        <div class="catty-music-small">
+            <img src="images/catty.jpg" />
+            <div>
+                <!--Music controls-->
+                <p>If It Ain't Love</p>
+                <p>Catson Derulo</p>
+            </div>
+        </div>
+        <div class="catty-music-control">
+            <i class="fa fa-step-backward"></i>
+            <i class="fa fa-pause"></i>
+            <i class="fa fa-step-forward"></i>
+            <i class="fa fa-rotate-right sm-hide"></i>
+            <i class="fa fa-random sm-hide"></i>
+        </div>
+    </footer>
+</body>
+</html>
